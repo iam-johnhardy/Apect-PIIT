@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <me xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="index.xsd">
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <html>css</html>
+    <body>Don't forget me this weekend!</body>
+</me> -->
+
+<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="index.xsd">
+  <book>
+    <title lang="en">Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+  <book>
+    <title lang="en">The Hobbit</title>
+    <author>J.R.R. Tolkien</author>
+    <year>1937</year>
+    <price>19.99</price>
+  </book>
+  <book>
+    <title lang="fr">Le Petit Prince</title>
+    <author>Antoine de Saint-Exupéry</author>
+    <year>1943</year>
+    <price>15.99</price>
+  </book>
+</bookstore>

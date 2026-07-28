@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML</title>
+</head>
+<body>
+    <p id="parser"></p>
+
+<script>
+
+
+     var xmlstrings = "<fruits> <fruit>" +
+            "<name>Apple</name>" +
+            "<name>Dates</name>" 
+           + "<name>Banana</name> "+
+            "<name>Orange</name>" +
+        "</fruit> </fruits>";
+
+       var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(xmlstrings, 'text/xml')
+
+        document.getElementById('parser').innerHTML = xmlDoc.getElementsByTagName('name')[1].childNodes[0].nodeValue;
+
+</script>
+
+
+</body>
+</html>

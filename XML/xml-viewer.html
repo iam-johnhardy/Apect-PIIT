@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XML + XSL Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f7fb; color: #222; }
+    h1 { margin-bottom: 8px; }
+    #status { margin-bottom: 18px; color: #555; }
+    #status.error { color: #b00; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    table th, table td { border: 1px solid #ccc; padding: 12px; text-align: left; }
+    table th { background: #9acd32; color: #111; }
+  </style>
+</head>
+<body>
+  <h1>XML + XSL Viewer</h1>
+  <div id="status">Loading <code>html.xml</code> and <code>html.xsl</code>...</div>
+  <div id="output"></div>
+
+  <script>
+    async function loadAndTransform() {
+      const status = document.getElementById('status');
+      try {
+        const [xmlRes, xslRes] = await Promise.all([fetch('html.xml'), fetch('html.xsl')]);
+        if (!xmlRes.ok) throw new Error(`Failed to load html.xml (${xmlRes.status})`);
+        if (!xslRes.ok) throw new Error(`Failed to load html.xsl (${xslRes.status})`);
+
+        const xmlText = await xmlRes.text();
+        const xslText = await xslRes.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+        const xslDoc = parser.parseFromString(xslText, 'text/xml');
+
+        if (!xmlDoc || !xslDoc) {
+          throw new Error('Unable to parse XML or XSL content.');
+        }
+
+        const processor = new XSLTProcessor();
+        processor.importStylesheet(xslDoc);
+        const resultFragment = processor.transformToFragment(xmlDoc, document);
+
+        document.getElementById('output').innerHTML = '';
+        document.getElementById('output').appendChild(resultFragment);
+        status.textContent = 'Displayed html.xml with html.xsl successfully.';
+      } catch (err) {
+        status.textContent = 'Error: ' + err.message;
+        status.className = 'error';
+        document.getElementById('output').innerHTML = '';
+        if (window.location.protocol === 'file:') {
+          const note = document.createElement('p');
+          note.innerHTML = '<strong>Note:</strong> Some browsers block local XSL/Fetch when opened via <code>file://</code>. Run a local HTTP server and open this page from <code>http://localhost</code>.';
+          document.getElementById('output').appendChild(note);
+        }
+      }
+    }
+
+    loadAndTransform();
+  </script>
+</body>
+</html>

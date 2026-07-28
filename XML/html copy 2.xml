@@ -1,0 +1,6 @@
+<!DOCTYPE web [
+  <!ELEMENT web (html, css)>
+  <!ELEMENT html (#PCDATA)>
+  <!ELEMENT css (name)>
+  <!ELEMENT name (#PCDATA)>
+]>
