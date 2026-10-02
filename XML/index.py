@@ -1,8 +1,8 @@
-# import xmlschema
+import xmlschema
 
-# schem = xmlschema.XMLSchema('index1.xsd')
-# is_valid1 = schem.is_valid('index1.xml')
-# print(is_valid1)
+schem = xmlschema.XMLSchema('index1.xsd')
+is_valid1 = schem.is_valid('index1.xml')
+print(is_valid1)
 
 # schema = xmlschema.XMLSchema('index.xsd')   
 # is_valid = schema.is_valid('index.xml')
@@ -106,8 +106,8 @@
 # for child in root:
 #     print(child.tag)
 
-from lxml import etree
+# from lxml import etree
 
-tree = etree.parse("index.xml")
-books = tree.xpath("//book[price>20]/title/text()")
-print(books)  # Output: ['Harry Potter']
+# tree = etree.parse("index.xml")
+# books = tree.xpath("//book[price>20]/title/text()")
+# print(books)  # Output: ['Harry Potter']

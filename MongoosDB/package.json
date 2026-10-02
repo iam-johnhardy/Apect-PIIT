@@ -1,0 +1,16 @@
+{
+  "name": "mongoosdb",
+  "version": "1.0.0",
+  "description": "> For the complete MongoDB documentation index, see www.mongodb.com/docs/llms.txt npm init -y npm install mongodb # Run Commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mongodb": "^7.6.0"
+  }
+}

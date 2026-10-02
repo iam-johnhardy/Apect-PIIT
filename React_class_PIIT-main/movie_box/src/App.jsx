@@ -1,11 +1,7 @@
+import Browse from "./pages/Browse";
 
-export default function App() {
-  return (
-    <h1 className="text-black">
-    
-        </h1 >
-
-  );
+function App() {
+  return <Browse />;
 }
 
-
+export default App;

@@ -1,3 +1,7 @@
+const fetchApi
+fecth api = 'https://6a59ff28ad8332e75f01fbde.mockapi.io/student/student'
+
+
 // var name= 'john';
 // console.log(name)
 
@@ -31,21 +35,67 @@
 
 // console.log(result);
 
-const { XmlParser, Xslt } = require('xslt-processor');
-const fs = require('fs');
 
-const xml = fs.readFileSync('html.xml', 'utf8');
-const xsl = fs.readFileSync('html.xsl', 'utf8');
+// const name = input('Enter your name: ');
+// console.log(`Hello, ${name}!`);
+// document.getElementById('parser').innerHTML = `Hello, ${name}!`;
 
-(async () => {
-  const parser = new XmlParser();
-  const processor = new Xslt();
 
-  const xmlDoc = parser.xmlParse(xml);
-  const xslDoc = parser.xmlParse(xsl);
+fetch("https://6a59ff28ad8332e75f01fbde.mockapi.io/student/student")
+.then(response => {
+ 
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  } 
+    return response.text();
+})
+.then(a => {
+  myDisplayer(a);
+});
+// Funtion to display any text
+function myDisplayer(text) {
+//   document.getElementById("parser").innerHTML = text;
+//   console.log(text)
+// alert('sucessful')
+}
 
-  const result = await processor.xsltProcess(xmlDoc, xslDoc);
 
-  fs.writeFileSync('output.html', result);
-  console.log('✅ output.html created successfully');
-})();
+function greeting(w){
+    return w
+}
+//alert(greeting('hello world'))
+
+if (true) {
+    let x = 100;
+   
+}else{
+    // alert('false')
+}
+
+// alert('false')
+// let c = prompt('Enter your Username: ')
+// alert (`Welcome Back, ${c}!`)
+// console.log(`Hello, ${c}!`)
+
+
+
+//  async function myFunction() {
+//     //code
+//     let r = await 'John'
+//     let listOfItems = await ['item1', 'item2', 'item3'];
+//     let response = await fetch("https://6a59ff28ad8332e75f01fbde.mockapi.io/student/student");
+//     let data = await response.json();
+//     console.log(data);
+//     console.log(r)
+//     console.log(listOfItems)
+// }
+// myFunction()
+
+
+const text = '{"name":"John","age":30,"city":"New York"}'
+const obj = JSON.parse(text);
+console.log(obj)
+
+const jsonString = { name: 'John', age: 30, city: 'New York' }
+const jsonText = JSON.stringify(jsonString);
+console.log(jsonText)

@@ -1,0 +1,30 @@
+[
+  {
+    "createdAt": "2026-07-16T13:57:45.178Z",
+    "name": "April O'Reilly",
+    "avatar": "https://avatars.githubusercontent.com/u/3966227",
+    "age": "1977-04-10T08:58:03.108Z",
+    "id": "1"
+  },
+  {
+    "createdAt": "2026-07-16T23:06:27.647Z",
+    "name": "Dr. Irene Prohaska",
+    "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/38.jpg",
+    "age": "1985-12-24T00:51:43.131Z",
+    "id": "2"
+  },
+  {
+    "createdAt": "2026-07-16T22:40:30.582Z",
+    "name": "Maggie Block",
+    "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/51.jpg",
+    "age": "1998-08-10T22:09:19.178Z",
+    "id": "3"
+  },
+  {
+    "createdAt": "2026-07-16T20:51:31.966Z",
+    "name": "Faith Balistreri IV",
+    "avatar": "https://avatars.githubusercontent.com/u/56096785",
+    "age": "1991-05-07T14:57:49.496Z",
+    "id": "4"
+  }
+]

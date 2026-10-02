@@ -1,3 +1,10 @@
-.h2{
-  
+@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+@import "tailwindcss";
+
+
+.font-SendFlowers {
+  font-family: 'Send Flowers', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
+

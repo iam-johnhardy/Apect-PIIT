@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE students [
-  <!ELEMENT students (student+)>
-  <!ELEMENT student (st.no, name, age)>
-  <!ELEMENT st.no (#PCDATA)>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT age (#PCDATA)>
-]>
+<?xml-stylesheet type="text/xsl" href="index1.xsl"?>
+<school>
+  <student>
+    <st.no>1</st.no>
+    <name>John Doe</name>
+    <age>6</age>
+  </student>
 
-<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-      xsi:noNamespaceSchemaLocation= "index1.xsd">
-<student>
-  <st.no>1</st.no>
-  <name>John Doe</name>
-  <age>6</age>
-</student>
+  <student>
+    <st.no>2</st.no>
+    <name>Kristen</name>
+    <age>7</age>
+  </student>
 
-<student>
-  <st.no>2</st.no>
-  <name>Kristen</name>
-  <age>7</age>
-</student>
+  <student>
+    <st.no>3</st.no>
+    <name>Alex</name>
+    <age>8</age>
+  </student>
 
-<student>
-  <st.no>3</st.no>
-  <name>Alex</name>
-  <age>8</age>
-</student>
+  <student>
+    <st.no>4</st.no>
+    <name>Patrick</name>
+    <age>9</age>
+  </student>
 
-<student>
-  <st.no>4</st.no>
-  <name>Patrick</name>
-  <age>9</age>
-</student>
-
-<student>
-  <st.no>5</st.no>
-  <name>Lukasz</name>
-  <age>11</age>
-</student>
-</students>
+  <student>
+    <st.no>5</st.no>
+    <name>Lukasz</name>
+    <age>11</age>
+  </student>
+</school>
